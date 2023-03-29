@@ -1,0 +1,5 @@
+snavesutit.unnamed_exporter.name: Unnamed Exporter
+
+snavesutit.unnamed_exporter.settings.foo: Foo
+snavesutit.unnamed_exporter.settings.foo.description: |-
+  Foo is a setting that does something.
