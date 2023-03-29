@@ -1,0 +1,1 @@
+# animated-java-exporter-plugin-template
