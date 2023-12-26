@@ -9,6 +9,8 @@ import * as esbuild from 'esbuild'
 
 import * as PACKAGE from '../package.json'
 
+import {yamlPlugin} from "esbuild-plugin-yaml"
+
 // const PACKAGE = JSON.parse(fs.readFileSync('./package.json', 'utf-8'))
 
 const INFO_PLUGIN: esbuild.Plugin = {
@@ -79,7 +81,7 @@ async function buildDev() {
 		minify: false,
 		platform: 'node',
 		sourcemap: true,
-		plugins: [INFO_PLUGIN],
+		plugins: [INFO_PLUGIN, yamlPlugin({})],
 		format: 'iife',
 	})
 	await ctx.watch()
@@ -93,7 +95,7 @@ async function buildProd() {
 		minify: true,
 		platform: 'node',
 		sourcemap: false,
-		plugins: [INFO_PLUGIN],
+		plugins: [INFO_PLUGIN, yamlPlugin({})],
 		banner: createBanner(),
 		drop: ['debugger'],
 		format: 'iife',
